@@ -7,19 +7,21 @@ export const Detail = () => {
   const [DataDetail, setDataDetail] = useState([]);
   const navigate = useNavigate()
 
-  const getDetailMovie = async () => {
-    try {
-      const data = await movieServiceInstance.fetchDetailMovie(id);
-      setDataDetail(data);
-      console.log(data);
-    } catch (error) {
-      console.log("Error fetching : ", error);
-    }
-  };
+  
 
   useEffect(() => {
+    const getDetailMovie = async () => {
+      try {
+        const data = await movieServiceInstance.fetchDetailMovie(id);
+        setDataDetail(data);
+        console.log(data);
+      } catch (error) {
+        console.log("Error fetching : ", error);
+      }
+    };
+
     getDetailMovie();
-  }, []);
+  }, [id]);
   return (
     <div className="flex justify-center items-center h-screen gap-5 relative">
       <button className="bg-red-500 text-white px-3 rounded-xl absolute top-5 left-5" onClick={() => navigate('/')}>Back</button>

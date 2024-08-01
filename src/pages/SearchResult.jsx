@@ -4,7 +4,7 @@ import { Header } from "../components/Header";
 import { MovieList } from "../components/MovieList";
 
 export const SearchResult = () => {
-  const { handleSearch, searchData, setSearchData, Data } = useContext(searchContext);
+  const { Data } = useContext(searchContext);
   console.log(Data, "<-- result");
   return (
     <div>

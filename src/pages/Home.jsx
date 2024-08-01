@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import movieServiceInstance from '../services/movie/MovieServices'
 import { MovieList } from '../components/MovieList'
 import { Header } from '../components/Header'
+import { getUsername } from '../services/auth/AuthServices'
 
 
-export const Home = () => {
+export const Home = () => {    
     const [DataMovie, setDataMovie] = useState([])
+
   
     const getDataMovie = async() => {
         try {
@@ -18,7 +20,7 @@ export const Home = () => {
     }
 
     useEffect(() => {
-        getDataMovie()
+        getDataMovie();        
     }, [])
     return (
       <div>

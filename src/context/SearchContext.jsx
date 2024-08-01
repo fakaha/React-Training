@@ -1,4 +1,4 @@
-import React, { children, createContext, useEffect, useState } from 'react'
+import React, { children, createContext, useState } from 'react'
 import movieServiceInstance from '../services/movie/MovieServices';
 
 
@@ -8,10 +8,6 @@ const SearchContextProvider = ({children}) => {
     const [searchData, setSearchData] = useState('')
     const [Data, setData] = useState([])
 
-    // useEffect(() => {
-    //     console.log(Data, 'datane Data setelah diupdate');
-    // }, [Data]);
-    // useeffect karena menggunakan movieservice/ componen lain untuk API
 
     const handleSearch = async() => {
         try {
